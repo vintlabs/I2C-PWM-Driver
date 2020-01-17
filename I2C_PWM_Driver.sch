@@ -59,17 +59,6 @@ F 3 "~" H 14550 3800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Switch:SW_Push SW1
-U 1 1 5BCFB8BC
-P 1300 7750
-F 0 "SW1" V 1346 7702 50  0000 R CNN
-F 1 "SW_Push" V 1255 7702 50  0000 R CNN
-F 2 "reset:EVQ Tactile Switch" H 1300 7950 50  0001 C CNN
-F 3 "" H 1300 7950 50  0001 C CNN
-	1    1300 7750
-	0    -1   -1   0   
-$EndComp
-$Comp
 L Transistor_FET:IRLML6402 Q1
 U 1 1 5BCFBC94
 P 5400 1200
@@ -1378,28 +1367,6 @@ F 3 "" H 1500 7350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R24
-U 1 1 5BD6F8B6
-P 1300 8250
-F 0 "R24" H 1370 8296 50  0000 L CNN
-F 1 "10k" H 1370 8205 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 1230 8250 50  0001 C CNN
-F 3 "~" H 1300 8250 50  0001 C CNN
-	1    1300 8250
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR049
-U 1 1 5BD877CA
-P 1300 8600
-F 0 "#PWR049" H 1300 8350 50  0001 C CNN
-F 1 "GND" H 1305 8427 50  0000 C CNN
-F 2 "" H 1300 8600 50  0001 C CNN
-F 3 "" H 1300 8600 50  0001 C CNN
-	1    1300 8600
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR053
 U 1 1 5BD8C433
 P 2200 8850
@@ -1471,8 +1438,6 @@ Wire Wire Line
 Wire Wire Line
 	2100 7700 2100 7800
 Connection ~ 2100 7700
-Wire Wire Line
-	1300 7400 1500 7400
 Wire Wire Line
 	1500 7400 1700 7400
 Wire Wire Line
@@ -2113,8 +2078,6 @@ Text Notes 14650 1550 0    50   ~ 0
 Vcc Out
 Text Notes 900  3900 0    50   ~ 0
 I2C Pullups
-Text Notes 900  7950 0    50   ~ 0
-Reset
 $Comp
 L power:GND #PWR09
 U 1 1 5C31F359
@@ -2434,20 +2397,9 @@ F 3 "http://www.ti.com/lit/ds/symlink/lm2931-n.pdf" H 2400 8450 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1300 7400 1300 7550
-Wire Wire Line
-	1300 7950 1300 8000
-Wire Wire Line
-	1300 8400 1300 8600
-Wire Wire Line
 	1900 8550 1400 8550
 Wire Wire Line
 	1400 8550 1400 8000
-Wire Wire Line
-	1400 8000 1300 8000
-Connection ~ 1300 8000
-Wire Wire Line
-	1300 8000 1300 8100
 $Comp
 L Device:LED D1
 U 1 1 5BF3EC49
@@ -2498,4 +2450,32 @@ Wire Wire Line
 	1650 5600 1650 5450
 Wire Wire Line
 	1650 5150 1650 5050
+Wire Wire Line
+	1300 8000 1300 8100
+Wire Wire Line
+	1400 8000 1300 8000
+Wire Wire Line
+	1300 8400 1300 8600
+$Comp
+L power:GND #PWR049
+U 1 1 5BD877CA
+P 1300 8600
+F 0 "#PWR049" H 1300 8350 50  0001 C CNN
+F 1 "GND" H 1305 8427 50  0000 C CNN
+F 2 "" H 1300 8600 50  0001 C CNN
+F 3 "" H 1300 8600 50  0001 C CNN
+	1    1300 8600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R24
+U 1 1 5BD6F8B6
+P 1300 8250
+F 0 "R24" H 1370 8296 50  0000 L CNN
+F 1 "10k" H 1370 8205 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 1230 8250 50  0001 C CNN
+F 3 "~" H 1300 8250 50  0001 C CNN
+	1    1300 8250
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
